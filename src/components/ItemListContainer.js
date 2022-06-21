@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class ItemListContainer extends Component {
-  render(msg) {
-    return (
-    alert ("Bienvenido " + {msg} + "!")
-    )
-  }
+export default function ItemListContainer({msg}) {
+  return (
+    <div> Bienvenido {msg}!</div>
+  )
 }
-
-export default ItemListContainer
