@@ -1,15 +1,15 @@
 import React, { Component, useEffect, useState } from 'react'
 
 
-export default function ItemCount(limiteStock){
+export default function ItemCount({limiteStock, valorInicial, onAdd}){
 
 
-    const [numeroFinal, setNumeroFinal] = useState(1);
+    const [numeroFinal, setNumeroFinal] = useState(valorInicial);
 
     useEffect(() => {
-      if (numeroFinal > 5) {
+      if (numeroFinal > limiteStock) {
         alert("No puede superar la cantidad maxima de stock")
-        setNumeroFinal(5)
+        setNumeroFinal(limiteStock)
       }
     }, [numeroFinal])
     
@@ -27,6 +27,8 @@ export default function ItemCount(limiteStock){
     > <h1 style={{textAlign: "center"}}>{numeroFinal}</h1>
     <button onClick={sumarNumero}> + </button>
     <button onClick={restarNumero}> - </button>
+    <h2><button onClick={()=>onAdd}>Agregar al carrito</button>
+      </h2>
     </div>
   )
 }
