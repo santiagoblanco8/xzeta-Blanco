@@ -27,7 +27,7 @@ export default function ItemCount({limiteStock, valorInicial, onAdd}){
     > <h1 style={{textAlign: "center"}}>{numeroFinal}</h1>
     <button onClick={sumarNumero}> + </button>
     <button onClick={restarNumero}> - </button>
-    <h2><button onClick={()=>onAdd}>Agregar al carrito</button>
+    <h2><button onClick={()=>onAdd(numeroFinal)}>Agregar al carrito</button>
       </h2>
     </div>
   )
