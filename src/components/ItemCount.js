@@ -11,8 +11,8 @@ export default function ItemCount({limiteStock, valorInicial, onAdd}){
         alert("No puede superar la cantidad maxima de stock")
         setNumeroFinal(limiteStock)
       }
-      else if(numeroFinal < 0) {
-        setNumeroFinal(0)
+      else if(numeroFinal < 1) {
+        setNumeroFinal(1)
       }
     }, [numeroFinal])
     
