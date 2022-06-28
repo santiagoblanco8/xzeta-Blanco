@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
+import ItemListContainer from './components/ItemListContainer';
 import Item from './components/Item';
 
 function App() {
@@ -14,9 +14,8 @@ function App() {
       <header className="App-header">
         <NavBar></NavBar>
       </header>
-      <ItemListContainer msg="Usuario"/>
       <ItemCount limiteStock={5} valorInicial={1} onAdd={onAdd}/>
-      <Item />
+      <ItemListContainer />
     </div>
   );
 }

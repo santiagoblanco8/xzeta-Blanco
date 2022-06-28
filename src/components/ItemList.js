@@ -1,17 +1,15 @@
 import React from 'react'
+import { Item } from './Item';
 
 export default function ItemList({productos}) {
   return (
     <div>
-      {productos.map((producto) => (
+      {productos.map((producto) => 
         
-        <div key={producto.id}>
-          <h2>{producto.name}</h2>
-                <h2>id: {producto.id}</h2>
-                  <h3>Precio: {producto.price}$</h3>
-        </div>
+        <Item key={producto.id} producto={producto}/>
+          
         
-      ))}
+      )}
       </div>
   );
 }
