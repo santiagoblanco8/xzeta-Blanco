@@ -1,43 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import ItemList from './ItemList';
+import { getArray } from './helpers/getArray';
+import { array } from '../data/data';
+import "./ItemListContainer.css";
 
 export default function ItemListContainer() {
-  const [productos, setProductos] = useState([]);
-  let pago;
+  const [productos, setProductos] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    pago = new Promise((resolve,reject) =>  {
-
-      setTimeout(()=> {
-        if(Math.random() < 0.9){
-          resolve([{id: 1, name: "remera 1", price: 200},
-                  {id: 2, name: "remera 2", price: 400},
-                  {id: 3, name: "remera 3", price: 600},
-                  {id: 4, name: "remera personalizable", price: 1200},]);}
-          else{
-          reject("no existe");
-          }
-      }
-      , 2000)
-
-  });
-
-  pago
-      .then((resultado) => {
-        setProductos(resultado);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-
-}, []);
+    getArray(array)
+      .then(res=>setProductos(res))
+      .catch(err=>console.log(err))
+      .finally(()=> setLoading(false))
+    
+  }, [])
 
   return (
-    <div onClick={() => {
-      console.log(pago)
-    }}>Item
-    {productos && <ItemList productos={productos}/>}
+    <div id='item-list-container'>
+      {
+        loading?
+        <div>Cargando...</div>
+        :
+        <ItemList productos={productos} />
+      }
     </div>
   )
 }

@@ -6,3 +6,8 @@ padding-left: 15px;
 button{
     text-align: right;
 }
+
+.container{
+    display: flex;
+    align-items: space-between;
+}

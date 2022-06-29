@@ -14,14 +14,14 @@ const NavBar = () => {
                 <Typography variant='h6' component='div' sx={{ flexgrow: 1 }}>
                     xZeta
                 </Typography>
-                
-                <Stack direction='row' spacing={2}>
+
+                <Stack direction='row' spacing={4}>
                     <Button color="inherit" >Home</Button>
                     <Button color="inherit"><Cartwidget/></Button>
                     <Button color="inherit">Shop</Button>
                     <Button color="inherit">About us</Button>
                 </Stack>
-                
+
             </Toolbar>
         </AppBar>
     )
