@@ -1,0 +1,17 @@
+#item-detail-container{
+    width: 100%;
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+#item-detail{
+    display: flex;
+}
+
+#portada{
+    width: 50%;
+}
+
+#data{
+    width: 50%;
+}

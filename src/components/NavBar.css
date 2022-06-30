@@ -1,11 +1,3 @@
-h1{
-text-align: right;
-padding-left: 15px;
-}
-
-button{
-    text-align: right;
-}
 
 .container{
     display: flex;

@@ -4,15 +4,16 @@ import { array } from '../data/data';
 import { useState } from 'react';
 import {ItemDetail} from './ItemDetail';
 import { useEffect } from 'react';
+import './ItemDetailContainer.css';
 
-export const ItemDetailContainer= () => {
+const ItemDetailContainer= () => {
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         getArray(array)
             .then(res=>{
-              const item = res.find((item)=> item.id === 2)
+              const item = res.find((item)=> item.id === 1)
               setProducto(item)
             })
             .catch(err=>console.log(err))
@@ -21,12 +22,13 @@ export const ItemDetailContainer= () => {
     
     
   return (
-    <div>{
+    <div id="item-detail-container">{
       loading?
       <div>Cargando...</div>
       :
-      <ItemDetail {...producto} />
+      <ItemDetail producto={producto} />
     }
       </div>
   )
 }
+export default ItemDetailContainer

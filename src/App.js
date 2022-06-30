@@ -3,7 +3,7 @@ import NavBar from './components/NavBar';
 import ItemCount from './components/ItemCount';
 import ItemListContainer from './components/ItemListContainer';
 import Item from './components/Item';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer'
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
       </header>
       <ItemCount limiteStock={5} valorInicial={1} onAdd={onAdd}/>
       <ItemListContainer />
+      <ItemDetailContainer />
     </div>
   );
 }
