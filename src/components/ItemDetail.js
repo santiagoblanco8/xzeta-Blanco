@@ -5,7 +5,7 @@ export const ItemDetail = ({producto}) => {
   return (
     <div id="item-detail">
       <div id="portada">
-          <img src={producto.pictureUrl} alt={producto.title}/> 
+          <img id="pictureDetail" src={producto.pictureUrl} alt={producto.title}/> 
       </div>
       <div id="data">
         <h1>{producto.title}</h1>

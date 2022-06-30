@@ -2,4 +2,16 @@
 .container{
     display: flex;
     align-items: space-between;
+
+    
+}
+
+#brand{
+    color: white;
+    text-decoration: none;
+}
+
+.button-detail{
+    color: black;
+    text-decoration: none;
 }
