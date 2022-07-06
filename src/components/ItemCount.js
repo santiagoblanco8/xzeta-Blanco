@@ -1,4 +1,5 @@
 import React, { Component, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import './ItemCount.css';
 
 export default function ItemCount({limiteStock, valorInicial, onAdd}){
@@ -32,7 +33,11 @@ export default function ItemCount({limiteStock, valorInicial, onAdd}){
     > <h1 style={{textAlign: "center"}}>{numeroFinal}</h1>
     <button onClick={sumarNumero} id="button-count"> + </button>
     <button onClick={restarNumero} id="button-count"> - </button>
-    <button onClick={()=>onAdd(numeroFinal)} id="add-cart">Agregar al carrito</button>
+    <button onClick={()=>onAdd(numeroFinal)} id="add-cart">
+      <Link to={`/cart`} className="button-detail2">
+      Agregar al carrito
+      </Link>
+      </button>
   
     </div>
   )
