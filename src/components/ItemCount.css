@@ -1,0 +1,22 @@
+#item-count{
+    z-index: 10000;
+    margin-top: 100px;
+    margin-right: 300px;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#button-count{
+    width: 20px;
+    margin-left: 5px;
+    background-color: black;
+    color: white;
+}
+
+#add-cart{
+    margin-left: 5px;
+    background-color: black;
+    color: white;
+
+}

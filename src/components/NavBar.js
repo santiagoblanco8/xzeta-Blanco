@@ -27,7 +27,7 @@ const NavBar = () => {
                     <Button color="inherit" ><Link to={"/"} id="brand" >Home</Link></Button>
                     <Button color="inherit"><Cartwidget/></Button>
                     <Button color="inherit"><Link to={"/category/mistral"} id="brand" >Mistral</Link></Button>
-                    <Button color="inherit"><Link to={"/category/polo"} id="brand" >Polo</Link></Button>
+                    <Button color="inherit"><Link to={"/category/polo"} id="brand" onClick={() => window.location.reload()}>Polo</Link></Button>
                 </Stack>
 
             </Toolbar>

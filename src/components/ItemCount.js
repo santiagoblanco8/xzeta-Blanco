@@ -1,9 +1,11 @@
 import React, { Component, useEffect, useState } from 'react'
-
+import './ItemCount.css';
 
 export default function ItemCount({limiteStock, valorInicial, onAdd}){
 
-
+  function onAdd(cant) {
+    alert(cant + " productos han sido agregados al carrito")
+  }
     const [numeroFinal, setNumeroFinal] = useState(valorInicial);
 
     useEffect(() => {
@@ -26,12 +28,12 @@ export default function ItemCount({limiteStock, valorInicial, onAdd}){
     }
 
   return (
-    <div style={{ border: "3px solid blue", width: "200px"}}
+    <div id="item-count"
     > <h1 style={{textAlign: "center"}}>{numeroFinal}</h1>
-    <button onClick={sumarNumero}> + </button>
-    <button onClick={restarNumero}> - </button>
-    <h2><button onClick={()=>onAdd(numeroFinal)}>Agregar al carrito</button>
-      </h2>
+    <button onClick={sumarNumero} id="button-count"> + </button>
+    <button onClick={restarNumero} id="button-count"> - </button>
+    <button onClick={()=>onAdd(numeroFinal)} id="add-cart">Agregar al carrito</button>
+  
     </div>
   )
 }
