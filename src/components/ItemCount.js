@@ -4,9 +4,7 @@ import './ItemCount.css';
 
 export default function ItemCount({limiteStock, valorInicial, onAdd}){
 
-  function onAdd(cant) {
-    alert(cant + " productos han sido agregados al carrito")
-  }
+  
     const [numeroFinal, setNumeroFinal] = useState(valorInicial);
 
     useEffect(() => {
@@ -33,7 +31,7 @@ export default function ItemCount({limiteStock, valorInicial, onAdd}){
     > <h1 style={{textAlign: "center"}}>{numeroFinal}</h1>
     <button onClick={sumarNumero} id="button-count"> + </button>
     <button onClick={restarNumero} id="button-count"> - </button>
-    <button onClick={()=>onAdd(numeroFinal)} id="add-cart">
+    <button onClick={()=>onAdd(numeroFinal, limiteStock)} id="add-cart">
       <Link to={`/cart`} className="button-detail2">
       Agregar al carrito
       </Link>

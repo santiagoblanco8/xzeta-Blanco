@@ -1,4 +1,5 @@
 //@ts-check
+import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemCount from './components/ItemCount';
@@ -12,6 +13,7 @@ function App() {
   
   
   return (
+    
     <div className="App"> 
     <BrowserRouter>
     <header className="App-header">
@@ -27,6 +29,7 @@ function App() {
     </BrowserRouter>
   
     </div>
+    
   );
 }
 
