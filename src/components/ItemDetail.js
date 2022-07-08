@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import ItemCount from './ItemCount';
 import './ItemDetailContainer.css';
 export const ItemDetail = ({producto}) => {
@@ -6,7 +6,7 @@ export const ItemDetail = ({producto}) => {
   function onAdd(cant) {
     alert(cant + " productos han sido agregados al carrito")
   }
-  
+
   return (
     <div id="item-detail">
       <div id="portada">
@@ -18,7 +18,7 @@ export const ItemDetail = ({producto}) => {
         <h1>${producto.price}</h1>
       </div>
       <div>
-        <ItemCount onAdd={onAdd} valorInicial={1} limiteStock={5}/>
+        <ItemCount onAdd={onAdd} valorInicial={0} />
       </div>
       
       

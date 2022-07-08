@@ -9,9 +9,7 @@ export default function HOCContext({ children }) {
 
   return (
      <>
-     <cartContext.Provider value={{cartValue, setCartValue}}>
      { children }
-     </cartContext.Provider>
      </>
   )
 }
