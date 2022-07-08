@@ -1,17 +1,16 @@
-//@ts-check
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemCount from './components/ItemCount';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemList from './components/ItemList';
 import ItemCart from './components/ItemCart';
+import HOCContext from './components/HOCContext';
 
-function App() {
-  
-  
+
+export default function App() {
   return (
+    <HOCContext>
+    
     <div className="App"> 
     <BrowserRouter>
     <header className="App-header">
@@ -27,7 +26,7 @@ function App() {
     </BrowserRouter>
   
     </div>
+    </HOCContext>
   );
 }
 
-export default App;
