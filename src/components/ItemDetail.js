@@ -6,7 +6,8 @@ export const ItemDetail = ({producto}) => {
 
   const {addItem} = useContext(myContext);
   function onAdd(cant) {
-    alert(cant + " productos han sido agregados al carrito")
+    alert("Usted agrego " + cant + " " + producto.name + " al carrito de compras");
+    addItem(producto);
   }
 
   return (
