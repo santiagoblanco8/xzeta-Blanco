@@ -7,6 +7,7 @@ export default function ItemCount({limiteStock, valorInicial, onAdd}){
   
     const [numeroFinal, setNumeroFinal] = useState(valorInicial);
 
+
     useEffect(() => {
       if (numeroFinal > limiteStock) {
         alert("No puede superar la cantidad maxima de stock")
@@ -27,16 +28,18 @@ export default function ItemCount({limiteStock, valorInicial, onAdd}){
     }
 
   return (
-    <div id="item-count"
-    > <h1 style={{textAlign: "center"}}>{numeroFinal}</h1>
+    <div id="item-count">
+   
+    <h1 style={{textAlign: "center"}}>{numeroFinal}</h1>
     <button onClick={sumarNumero} id="button-count"> + </button>
     <button onClick={restarNumero} id="button-count"> - </button>
-    <button onClick={()=>onAdd(numeroFinal, limiteStock)} id="add-cart">
+    <button onClick={()=>onAdd(numeroFinal, limiteStock)} id="add-cart">Agregar al carrito</button>
+    <button  id="add-cart">
       <Link to={`/cart`} className="button-detail2">
-      Agregar al carrito
+      Terminar mi compra
       </Link>
       </button>
-  
+      
     </div>
   )
 }
