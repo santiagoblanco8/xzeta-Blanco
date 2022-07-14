@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState, createContext} from 'react';
 
 export const myContext = createContext(null);
@@ -6,8 +6,13 @@ export const myContext = createContext(null);
 export default function CartContext({children}) {
     const [cart, setCart] = useState([]);
 
+    useEffect (() => {
+      console.log(cart)
+    }, [cart])
+
     function addItem(item, quantity) {
       let alreadyWas = isInCart(item.id);
+      console.log(alreadyWas)
       if(alreadyWas){
         removeItem(alreadyWas.id);
         setCart( [...cart, {...item, cantidad:quantity +alreadyWas.cantidad}])
@@ -25,7 +30,7 @@ export default function CartContext({children}) {
     }
 
     const isInCart = (id) => {
-      cart.find((este) => este.id === id);
+      return cart.some((este) => este.id === id)
     }
   return (
     <>
