@@ -5,31 +5,42 @@ import { useState } from 'react';
 import {ItemDetail} from './ItemDetail';
 import { useEffect } from 'react';
 import './ItemDetailContainer.css';
-import { useParams} from "react-router-dom"
+import { useParams} from "react-router-dom";
+import {doc, getDoc, getFirestore} from 'firebase/firestore';
 
 const ItemDetailContainer= () => {
-    const [producto, setProducto] = useState({})
-    const [loading, setLoading] = useState(true)
-    const {itemId} = useParams()
+    const [producto, setProducto] = useState({});
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const {itemId} = useParams();
 
-    useEffect(() => {
-        getArray(array)
-            .then(res=>{
-              const item = res.find((item)=> item.id === Number(itemId))
-              setProducto(item)
-            })
-            .catch(err=>console.log(err))
-            .finally(()=>setLoading(false))
+    useEffect( ()=>{
+      const db = getFirestore();
+      const itemConsultadoRef = doc(db, 'items', itemId);
+      let promesaItem = new Promise((resolve, rej)=>{
+          setTimeout(()=>{resolve(getDoc(itemConsultadoRef)) }, 1000)
+      })
+      
+      promesaItem
+      .then((snapshot)=>{
+          setProducto({...snapshot.data(), id: snapshot.id});
+      })
+      .catch((error)=> {
+          setError(true);
+      })
+      .finally(()=>{
+          setLoading(false);
+      })
     }, [itemId])
     
     
   return (
-    <div id="item-detail-container">{
-      loading?
-      <div>Cargando...</div>
-      :
-      <ItemDetail producto={producto} />
-    }
+    <div id="item-detail-container">
+        <>
+      {loading && "Cargando..."}
+      {error && "Ocurrio un error inesperado."}
+      {producto && <ItemDetail producto={producto} />}
+    </>
       </div>
   )
 }

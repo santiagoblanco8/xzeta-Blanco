@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState, createContext} from 'react';
+import {getDocs, collection, getFirestore} from 'firebase/firestore'
 
 export const myContext = createContext(null);
 
@@ -10,14 +11,14 @@ export default function CartContext({children}) {
       console.log(cart)
     }, [cart])
 
-    function addItem(item, quantity) {
+    function addItem(item, cant) {
       let alreadyWas = isInCart(item.id);
       console.log(alreadyWas)
       if(alreadyWas){
         removeItem(alreadyWas.id);
-        setCart( [...cart, {...item, cantidad:quantity +alreadyWas.cantidad}])
+        setCart( [...cart, {...item, cant:cant +alreadyWas.cant}])
       }else{
-        setCart([...cart, {...item, cantidad:quantity}])
+        setCart([...cart, {...item, cant:cant}])
       }
     }
 
