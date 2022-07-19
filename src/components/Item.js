@@ -4,8 +4,10 @@ import { Card, Button } from 'react-bootstrap'
 import { Link } from "react-router-dom"
 
 export const Item = ({producto}) =>{
-  return(
-    <Card style={{ width: '18rem' }} id="item">
+
+
+return(
+    <Card style={{ width: '18rem' }} id="item" data-aos="flip-left" data-aos-delay="300" > 
   <Card.Img variant="top" id="cardImage" src={producto.pictureUrl} />
   <Card.Body>
     <Card.Title>{producto.title}</Card.Title>

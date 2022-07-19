@@ -7,7 +7,8 @@ import { Link } from "react-router-dom"
 
 const NavBar = () => {
     return (
-        <AppBar position='static'>
+        
+        <AppBar position='static' >
             <Toolbar sx={{
                 justifyContent: "space-between"
             }}>
@@ -32,6 +33,7 @@ const NavBar = () => {
 
             </Toolbar>
         </AppBar>
+        
     )
 }
 

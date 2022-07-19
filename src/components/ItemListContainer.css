@@ -12,6 +12,7 @@
     border: 2px solid black;
     margin: 20px;
     background-color: white;
+    border-radius: 10px;
 }
 
 #cardImage{

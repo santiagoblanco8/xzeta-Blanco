@@ -18,9 +18,9 @@ export const ItemDetail = ({producto}) => {
       <div id="data">
         <h1>{producto.title}</h1>
         <h1>{producto.description}</h1>
-        <h1>${producto.price}</h1>
+        <h1>{producto.price}</h1>
       </div>
-      <div>
+      <div data-aos="zoom-in" data-aos-duration="1500">
         <ItemCount onAdd={onAdd} valorInicial={0} limiteStock={5} producto={producto} />
       </div>
       

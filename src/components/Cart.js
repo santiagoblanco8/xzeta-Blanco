@@ -31,7 +31,7 @@ export default function Cart() {
     <div className="divCart">
       <Typography  style={{color:'#e0f193d7', textAlign:'center', margin:'2rem'}} variant="h4"> Carrito </Typography>
 
-      <TableContainer component={Paper} sx={{ width:8/10, borderRadius:'15px' }}>
+      <TableContainer component={Paper} sx={{ width:8/10, borderRadius:'5px' }}>
       <Table  aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -49,7 +49,7 @@ export default function Cart() {
               key={row.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row" >
+              <TableCell component="th" scope="row" id='fotoRemera'>
                 <img  style={{width:'3rem'}} src={row.pictureUrl} alt={row.name}/>               
               </TableCell>
               <TableCell align="right">{row.name}</TableCell>
