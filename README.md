@@ -6,4 +6,4 @@ Mi proyecto trata de una pagina donde podemos comprar todo tipo de articulos con
 
 # Gif de navegacion
 
-![image](https://github.com/santiagoblanco8/xzeta-Blanco/blob/main/src/media/PrimeraEntregaFinal.gif)
+![image](https://github.com/santiagoblanco8/xzeta-Blanco/blob/main/src/media/EntregaFinal.gif)

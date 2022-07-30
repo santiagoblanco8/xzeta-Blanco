@@ -12,7 +12,6 @@ import { useState, useContext } from 'react';
 import { myContext } from './CartContext';
 import "./Checkout.css"
 import { Button, Typography } from '@mui/material';
-import AddTaskIcon from '@mui/icons-material/AddTask';
 import TextField from '@mui/material/TextField';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 
@@ -123,17 +122,17 @@ export default function CheckOut() {
   return (
     <>
     <div className='divCheckout'>
-        <Typography  style={{color:'#e0f193d7', textAlign:'center', margin:'1rem'}} variant="h4"> Resumen de compra </Typography>
+        <Typography  style={{color:'#000000', textAlign:'center', margin:'1rem'}} variant="h4"> Resumen de compra </Typography>
         <div className='Columnas'>
             <Paper className='divFormulario'>
-                <Typography variant="h5" style={{color:'#e0f193d7', textAlign:'center'}}>Productos</Typography>
+                <Typography variant="h5" style={{color:'#000000', textAlign:'center'}}>Productos</Typography>
             <TableContainer component={Paper}>
                 <Table  aria-label="simple table">
                     <TableBody>
                         {cart.map((row) => (
                         <TableRow  key={row.title} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}  >
-                            <TableCell align="center">{row.quantity}</TableCell>
-                            <TableCell align="center" sx={{ width:7/10 }}>{row.title}</TableCell>                    
+                            <TableCell align="center">{row.cantidad}</TableCell>
+                            <TableCell align="center" sx={{ width:7/10 }}>{row.name}</TableCell>                    
                             <TableCell align="center">${row.price}</TableCell>
         
                         </TableRow>
@@ -144,7 +143,7 @@ export default function CheckOut() {
 
             </Paper>
             <Paper  className='divFormulario'>
-                <Typography variant="h5" style={{color:'#e0f193d7', textAlign:'center'}}>Datos personales</Typography>
+                <Typography variant="h5" style={{color:'#000000', textAlign:'center'}}>Datos personales</Typography>
                 <TextField 
                 onChange={(e)=>{
                     
@@ -159,7 +158,7 @@ export default function CheckOut() {
                     open={open}
                     autoHideDuration={6000}
                     onClose={handleClose}
-                    message="Debe completar todos los campos correctamente para confirmar la compra"
+                    message="Complete los campos con el formato correcto"
                     action={action}
                 />
                 <Button onClick={()=>{
@@ -169,9 +168,9 @@ export default function CheckOut() {
         </div>
         <div className={mostrarCodigo? 'seVe': 'noSeVe'}>
             <Paper className='divCodigo'>
-                <Typography style={{fontSize:'1.2rem'}}> <AddTaskIcon/> El código de su compra es:</Typography>
+                <Typography style={{fontSize:'1.2rem'}}> Su codigo:</Typography>
                 <div className='codigoStyle'> <span>{codigo} </span>  </div>
-                <Typography style={{textAlign:'center'}}> Chequee su correo para ver el seguimiento de su pedido</Typography>
+                <Typography style={{textAlign:'center'}}> Consulte su correo para mas información</Typography>
             </Paper >
         </div>
     </div>

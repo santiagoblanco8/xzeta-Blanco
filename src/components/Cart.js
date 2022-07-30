@@ -29,7 +29,7 @@ export default function Cart() {
   return (
     <>
     <div className="divCart">
-      <Typography  style={{color:'#e0f193d7', textAlign:'center', margin:'2rem'}} variant="h4"> Carrito </Typography>
+      <Typography  style={{color:'#ffffff', textAlign:'center', margin:'2rem'}} variant="h4"> Carrito </Typography>
 
       <TableContainer component={Paper} sx={{ width:8/10, borderRadius:'5px' }}>
       <Table  aria-label="simple table">
@@ -71,7 +71,7 @@ export default function Cart() {
         </div>
         <div className={cartVacio ? 'NoSeVe' : 'SeVe'}>
           <div className="divFinalizarCompra">
-            <Typography style={{color:'#e0f193d7', textAlign:'center'}} variant="h5">
+            <Typography style={{color:'#ffffff', textAlign:'center'}} variant="h5">
               Importe total  $ {importe}
             </Typography>
             <Stack spacing={2} direction="row">
